@@ -1,6 +1,117 @@
+:root {
+    --color-accent: oklch(52.673% 0.11076 148.473);
+}
+
+html {
+    accent-color: var(--color-accent);
+}
+
 body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
-  font: 100%/1.5 system-ui;
+    font: 100%/1.5 system-ui;
+    max-width: min(80ch, 100% - 2rem);
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav a.current {
+    border-bottom: 0.4em solid oklch(80% 3% 200);
+    padding-bottom: 0.1em;
+}
+
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    padding-bottom: 0.1em;
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* Contact form */
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+label {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+}
+
+button {
+    grid-column: 1 / -1;
+}
+
+input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: 400%;
+}
+
+/* Projects page */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+}
+
+.projects article h2 {
+    margin: 0;
+}
+
+.projects article img {
+    width: 100%;
+}
+
+.projects article p {
+    margin: 0;
 }
