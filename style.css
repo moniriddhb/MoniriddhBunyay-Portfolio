@@ -115,3 +115,20 @@ h1 {
 .projects article p {
     margin: 0;
 }
+
+/* Resume page */
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.resume-header h3 {
+    margin: 0;
+}
+
+.date {
+    white-space: nowrap;
+}
