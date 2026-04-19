@@ -25,7 +25,7 @@ img {
 nav {
     display: flex;
     margin-bottom: 1.5rem;
-    border-bottom-color: var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     --border-color: oklch(50% 10% 200 / 40%);
 }
 
