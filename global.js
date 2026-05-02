@@ -106,17 +106,20 @@ export async function fetchJSON(url) {
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
-  projects.forEach(project => {
+  for (let project of projects) {
     const article = document.createElement('article');
 
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
-      <img src="${project.image}" alt="${project.title}">
-      <p>${project.description}</p>
+      <img src="${project.image}" alt="">
+      <div>
+        <p>${project.description}</p>
+        <p class="project-year">c. ${project.year}</p>
+      </div>
     `;
 
     containerElement.appendChild(article);
-  });
+  }
 }
 
 export async function fetchGitHubData(username) {

@@ -148,3 +148,70 @@ h1 {
 select {
   font: inherit;
 }
+
+.project-year {
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+  font-style: italic;
+  color: gray;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin: 2em 0;
+  display: block;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  margin-block: 2em;
+  border: 1px solid #ccc;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  width: 1em;
+  height: 1em;
+  background: var(--color);
+  display: inline-block;
+  border-radius: 50%;
+}
+
+#projects-pie-plot path {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path.selected {
+  stroke: white;
+  stroke-width: 3;
+}
+
+.legend li {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.legend:has(li:hover) li:not(:hover) {
+  opacity: 0.5;
+}
+
+.legend li.selected {
+  font-weight: bold;
+}
+
+.legend li.selected .swatch {
+  outline: 2px solid currentColor;
+}
